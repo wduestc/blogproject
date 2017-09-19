@@ -40,8 +40,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
+   #redirect方法的使用必须首先要实现了get_absolute_url
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk':self.pk})
+    #逆序排列
+    class Meta:
+        ordering = ['-created_time']
 
 

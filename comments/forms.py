@@ -8,6 +8,7 @@
 from django import forms
 from .models import Comment
 
+#Django的表单类必须继承自forms.Form类或者forms.ModelForm类
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
